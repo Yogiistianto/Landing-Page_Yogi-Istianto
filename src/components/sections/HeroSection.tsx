@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Sparkles, ArrowRight, Camera, Play } from 'lucide-react';
 import { profileStats } from '@/data/portfolioData';
 
@@ -28,12 +29,12 @@ export default function HeroSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
-            <a
+            <Link
               href="#course"
               className="inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-base px-7 py-4 rounded-xl transition glow-green"
             >
               Lihat Course Digital <ArrowRight size={18} />
-            </a>
+            </Link>
             <a
               href="https://instagram.com/bankerdapatcuan"
               target="_blank"

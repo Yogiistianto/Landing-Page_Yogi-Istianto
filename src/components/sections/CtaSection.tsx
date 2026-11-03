@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Sparkles, ArrowRight, Camera } from 'lucide-react';
 
 export default function CtaSection() {
@@ -20,12 +21,12 @@ export default function CtaSection() {
             Bergabunglah bersama 2.000+ member di komunitas kami yang sudah membuktikan bahwa membangun sumber penghasilan kedua dari internet itu sangat mungkin dilakukan.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
+            <Link
               href="#course"
               className="inline-flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-black font-black text-lg px-8 py-4 rounded-xl transition"
             >
               Ambil Bundle Sekarang <ArrowRight size={20} />
-            </a>
+            </Link>
             <a
               href="https://instagram.com/bankerdapatcuan"
               target="_blank"

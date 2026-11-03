@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Menu, X, ArrowRight } from 'lucide-react';
 
 export default function Navbar() {
@@ -24,7 +25,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-3">
+        <Link href="#" className="flex items-center gap-3">
           <Image
             src="/logo-profil.jpg"
             alt="Profil Yogi Istianto"
@@ -35,24 +36,24 @@ export default function Navbar() {
           <span className="font-bold text-lg tracking-tight text-white">
             Yogi Istianto | Digital Creator
           </span>
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
-          <a href="#tentang" className="text-sm text-slate-400 hover:text-white transition">Tentang</a>
-          <a href="#course" className="text-sm text-slate-400 hover:text-white transition">Course</a>
-          <a href="#testimoni" className="text-sm text-slate-400 hover:text-white transition">Testimoni</a>
-          <a href="#faq" className="text-sm text-slate-400 hover:text-white transition">FAQ</a>
+          <Link href="#tentang" className="text-sm text-slate-400 hover:text-white transition">Tentang</Link>
+          <Link href="#course" className="text-sm text-slate-400 hover:text-white transition">Course</Link>
+          <Link href="#testimoni" className="text-sm text-slate-400 hover:text-white transition">Testimoni</Link>
+          <Link href="#faq" className="text-sm text-slate-400 hover:text-white transition">FAQ</Link>
         </div>
 
         {/* Action Button & Mobile Toggle */}
         <div className="flex items-center gap-3">
-          <a
+          <Link
             href="#course"
             className="hidden md:inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-black font-bold text-sm px-5 py-2.5 rounded-xl transition"
           >
             Mulai Sekarang <ArrowRight size={14} />
-          </a>
+          </Link>
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition"
@@ -67,22 +68,22 @@ export default function Navbar() {
       {menuOpen && (
         <div className="md:hidden bg-[#13131A] border-t border-[#1E1E2E] px-6 py-4 flex flex-col gap-4">
           {['tentang', 'course', 'testimoni', 'faq'].map((href) => (
-            <a
+            <Link
               key={href}
               href={`#${href}`}
               onClick={() => setMenuOpen(false)}
               className="text-slate-300 hover:text-white capitalize py-2 transition"
             >
               {href}
-            </a>
+            </Link>
           ))}
-          <a
+          <Link
             href="#course"
             onClick={() => setMenuOpen(false)}
             className="mt-2 bg-emerald-500 text-black font-bold text-center py-3 rounded-xl"
           >
             Mulai Sekarang
-          </a>
+          </Link>
         </div>
       )}
     </nav>

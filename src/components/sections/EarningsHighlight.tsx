@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { BarChart3, ArrowRight } from 'lucide-react';
 import { earningsItems } from '@/data/portfolioData';
 
@@ -46,12 +47,12 @@ export default function EarningsHighlight() {
           <p className="text-black/70 leading-relaxed mb-8">
             Saya telah menyeleksi kelas dan panduan digital terbaik yang terbukti membantu ribuan member di komunitas. Pilih materi yang paling sesuai dengan kebutuhanmu saat ini, dan mulai bangun aset digitalmu tanpa harus coba-coba dari nol.
           </p>
-          <a
+          <Link
             href="#course"
             className="inline-flex items-center gap-2 bg-black text-yellow-400 font-bold px-7 py-4 rounded-xl hover:bg-black/80 transition"
           >
             Pilih Produk Sekarang <ArrowRight size={18} />
-          </a>
+          </Link>
         </div>
       </div>
     </section>
