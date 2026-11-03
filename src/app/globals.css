@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0A0A0F;
+  color: #ffffff;
+}
+
+::selection {
+  background-color: #10B98140;
+}
+
+@layer utilities {
+  .text-gradient-green {
+    background: linear-gradient(135deg, #10B981, #34D399);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-yellow {
+    background: linear-gradient(135deg, #F5E642, #FBBF24);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .glow-green {
+    box-shadow: 0 0 40px rgba(16, 185, 129, 0.25);
+  }
+  .glow-yellow {
+    box-shadow: 0 0 40px rgba(245, 230, 66, 0.25);
+  }
+}
+
