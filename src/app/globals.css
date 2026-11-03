@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-
 html {
   scroll-behavior: smooth;
 }
@@ -11,6 +9,16 @@ html {
 body {
   background-color: #0A0A0F;
   color: #ffffff;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading), 'Plus Jakarta Sans', system-ui, sans-serif;
+    letter-spacing: -0.025em;
+  }
+  p {
+    letter-spacing: -0.01em;
+  }
 }
 
 ::selection {
@@ -31,10 +39,13 @@ body {
     background-clip: text;
   }
   .glow-green {
-    box-shadow: 0 0 40px rgba(16, 185, 129, 0.25);
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.18);
   }
   .glow-yellow {
-    box-shadow: 0 0 40px rgba(245, 230, 66, 0.25);
+    box-shadow: 0 0 30px rgba(245, 230, 66, 0.18);
+  }
+  .card-glow {
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
   }
 }
 
