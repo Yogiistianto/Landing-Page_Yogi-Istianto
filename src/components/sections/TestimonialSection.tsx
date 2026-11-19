@@ -8,7 +8,7 @@ function StarRow({ count }: { count: number }) {
   return (
     <div className="flex gap-1">
       {Array.from({ length: count }).map((_, i) => (
-        <Star key={i} size={15} className="fill-amber-400 text-amber-400" />
+        <Star key={i} size={14} className="fill-amber-400 text-amber-400" />
       ))}
     </div>
   );
@@ -16,18 +16,18 @@ function StarRow({ count }: { count: number }) {
 
 export default function TestimonialSection() {
   return (
-    <section id="testimoni" className="py-20 md:py-24 scroll-mt-28">
-      <div className="max-w-6xl mx-auto px-6 md:px-8">
-        <div className="text-center mb-16">
+    <section id="testimoni" className="py-12 md:py-16 border-t border-slate-300/60 scroll-mt-28">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8">
+        <div className="text-center mb-8 md:mb-10">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ type: 'spring', stiffness: 120, damping: 20 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100/70 border border-blue-200/90 text-[#0F2C59] text-xs font-bold mb-4"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-100/70 border border-blue-200/90 text-[#0F2C59] font-mono text-xs uppercase tracking-wider font-bold mb-4"
           >
             <Award size={13} />
-            Bukti Nyata Komunitas
+            [ BUKTI NYATA KOMUNITAS ]
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
@@ -40,7 +40,8 @@ export default function TestimonialSection() {
           </motion.h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-10">
+        {/* Architectural Hairline Grid */}
+        <div className="border border-slate-300 rounded-xl overflow-hidden bg-slate-300 grid md:grid-cols-3 gap-px shadow-xs">
           {testimonials.map((t, i) => (
             <motion.div
               key={t.name}
@@ -48,19 +49,27 @@ export default function TestimonialSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ type: 'spring', stiffness: 120, damping: 20, delay: i * 0.08 }}
-              className="card-depth card-depth-hover p-7 rounded-2xl cursor-pointer flex flex-col justify-between"
+              className="p-6 sm:p-7 md:p-8 bg-white hover:bg-slate-50 transition-colors flex flex-col justify-between"
             >
               <div>
-                <StarRow count={t.stars} />
-                <p className="text-slate-700 leading-relaxed my-5 text-sm md:text-base font-normal">&ldquo;{t.text}&rdquo;</p>
+                <div className="flex items-center justify-between pb-3.5 mb-5 border-b border-slate-200">
+                  <span className="font-mono text-xs uppercase tracking-widest text-slate-400">
+                    [RECORD // 0{i + 1}]
+                  </span>
+                  <StarRow count={t.stars} />
+                </div>
+                <p className="text-slate-700 leading-relaxed text-sm md:text-base font-normal">
+                  &ldquo;{t.text}&rdquo;
+                </p>
               </div>
-              <div className="flex items-center gap-3 pt-3 border-t border-slate-200/80">
-                <div className="w-10 h-10 rounded-full bg-[#0F2C59] flex items-center justify-center font-bold text-white shrink-0 shadow-xs">
+
+              <div className="flex items-center gap-3 pt-6 mt-6 border-t border-slate-100">
+                <div className="w-9 h-9 rounded-md bg-[#0F2C59] flex items-center justify-center font-bold text-white font-mono text-xs shrink-0 shadow-xs">
                   {t.avatar}
                 </div>
                 <div>
                   <p className="font-bold text-slate-950 text-sm tracking-tight">{t.name}</p>
-                  <p className="text-slate-600 text-xs font-medium mt-0.5">{t.role}</p>
+                  <p className="text-slate-500 font-mono text-xs uppercase mt-0.5">{t.role}</p>
                 </div>
               </div>
             </motion.div>

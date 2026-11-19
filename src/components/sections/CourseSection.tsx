@@ -1,28 +1,28 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { BookOpen, CheckCircle2 } from 'lucide-react';
+import { BookOpen, CheckCircle2, ArrowRight } from 'lucide-react';
 import { courseModules, courseIncluded } from '@/data/portfolioData';
 
 export default function CourseSection() {
   return (
-    <section id="fasilitas" data-dark-section="true" className="py-20 md:py-28 bg-[#0B1F3F] text-white relative overflow-hidden border-y border-[#163366] shadow-2xl scroll-mt-28">
+    <section id="fasilitas" data-dark-section="true" className="py-12 md:py-20 lg:py-24 bg-[#0B1F3F] text-white relative overflow-hidden border-y border-[#163366] shadow-2xl scroll-mt-28">
       {/* Deep Navy Subtle Ambient Glow */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#143566]/80 via-[#0B1F3F] to-[#071326] pointer-events-none" />
       <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-blue-500/10 blur-[120px] pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto px-6 md:px-8 relative z-10">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 md:mb-10">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ type: 'spring', stiffness: 120, damping: 20 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-400/25 text-blue-300 text-xs font-semibold mb-4"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-500/10 border border-blue-400/25 text-blue-300 font-mono text-xs uppercase tracking-wider mb-4"
           >
             <BookOpen size={13} />
-            Fasilitas Eksklusif
+            [ FASILITAS EKSKLUSIF ]
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
@@ -44,73 +44,81 @@ export default function CourseSection() {
           </motion.p>
         </div>
 
-        {/* 6 Modules Grid (Elevated Dark Cards) */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+        {/* 6 Modules: Architectural Hairline Grid */}
+        <div className="border border-white/15 rounded-xl overflow-hidden bg-white/10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px mb-12 md:mb-16 shadow-2xl">
           {courseModules.map((mod, i) => (
             <motion.div
               key={mod.num}
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={{ type: 'spring', stiffness: 120, damping: 20, delay: i * 0.08 }}
-              whileHover={{ scale: 1.01, y: -2 }}
-              className="p-7 bg-[#122B54] border border-white/10 shadow-2xl rounded-2xl hover:border-blue-400/40 hover:shadow-blue-900/30 transition-all duration-200 group cursor-pointer"
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ type: 'spring', stiffness: 120, damping: 20, delay: i * 0.05 }}
+              className="p-6 sm:p-7 md:p-8 bg-[#0B1F3F] hover:bg-[#102952] transition-colors duration-200 flex flex-col justify-between group cursor-pointer"
             >
-              <div className="flex items-start gap-4">
-                <div className="text-3xl font-black text-blue-400/80 group-hover:text-blue-300 transition-colors leading-none tracking-tight">
-                  {mod.num}
+              <div>
+                <div className="flex items-center justify-between mb-4 pb-3 border-b border-white/10">
+                  <span className="font-mono text-sm tracking-wider font-bold text-blue-400">MOD-{mod.num}</span>
+                  <span className="font-mono text-[11px] uppercase tracking-widest text-slate-400">CORE MODULE</span>
                 </div>
-                <div>
-                  <p className="font-bold text-white mb-2 tracking-tight text-lg">{mod.title}</p>
-                  <p className="text-slate-300 text-sm leading-relaxed font-normal">{mod.desc}</p>
-                </div>
+                <h3 className="font-bold text-white mb-2 tracking-tight text-lg group-hover:text-blue-200 transition-colors">
+                  {mod.title}
+                </h3>
+                <p className="text-slate-300 text-sm leading-relaxed font-normal">{mod.desc}</p>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* What's Included & Pricing Card */}
+        {/* What's Included & Pricing: Split Architectural Panel */}
         <motion.div
           id="penawaran"
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ type: 'spring', stiffness: 120, damping: 20 }}
-          className="bg-gradient-to-br from-[#163668] via-[#10274B] to-[#0A1A35] border border-white/15 rounded-3xl p-8 md:p-12 shadow-2xl scroll-mt-28"
+          className="border border-white/15 bg-[#0F274F]/60 rounded-xl overflow-hidden shadow-2xl scroll-mt-28 grid md:grid-cols-12"
         >
-          <div className="grid md:grid-cols-2 gap-10 md:gap-12 items-center">
+          {/* Left Panel: Details & Benefits */}
+          <div className="md:col-span-7 p-6 sm:p-8 md:p-10 flex flex-col justify-between">
             <div>
-              <h3 className="text-2xl md:text-3xl font-black mb-4 tracking-tight text-white">Penawaran Spesial: Bundle Super Affiliate</h3>
-              <p className="text-slate-300 mb-8 leading-relaxed text-base font-normal">
+              <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-blue-300 font-semibold mb-3">
+                <span>// SPECIAL ACCESS BUNDLE</span>
+              </div>
+              <h3 className="text-2xl md:text-3xl font-black mb-3 tracking-tight text-white">
+                Penawaran Spesial: Bundle Super Affiliate
+              </h3>
+              <p className="text-slate-300 mb-6 leading-relaxed text-base font-normal">
                 Lebih hemat, lebih berdampak. Spesial untuk Anda, investasi di Super Affiliate hari ini otomatis membuka akses ke DUA produk premium lainnya tanpa biaya tambahan. Beli 1, dapat 3!
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-6 border-t border-white/10">
                 {courseIncluded.map((item) => (
                   <div key={item} className="flex items-center gap-2.5">
-                    <CheckCircle2 size={18} className="text-blue-400 shrink-0" />
+                    <CheckCircle2 size={16} className="text-blue-400 shrink-0" />
                     <span className="text-slate-200 text-sm font-medium">{item}</span>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="bg-[#0B1F3F] border border-white/15 rounded-2xl p-8 text-center shadow-2xl">
-              <p className="text-slate-400 text-sm mb-2 line-through font-mono">Rp 750.000</p>
-              <p className="text-5xl font-black text-white mb-2 tracking-tight">Rp 250.000</p>
-              <p className="text-blue-300 font-bold text-sm mb-6 flex items-center justify-center gap-1.5">
-                <span>⚡</span> Promo Bundle Terbatas!
-              </p>
-              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                <a
-                  href="https://instagram.com/bankerdapatcuan"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full bg-blue-400 hover:bg-blue-300 text-slate-950 font-black py-4 rounded-xl transition text-base md:text-lg shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_4px_16px_rgba(96,165,250,0.3)] tracking-tight hover:-translate-y-0.5 active:translate-y-0"
-                >
-                  Ambil Bundle Sekarang (Beli 1 Dapat 3)
-                </a>
-              </motion.div>
-              <p className="text-slate-400 text-xs mt-4">Transaksi aman. Akses instan langsung ke member area.</p>
+          </div>
+
+          {/* Right Panel: Focused Pricing & CTA */}
+          <div className="md:col-span-5 p-6 sm:p-8 md:p-10 border-t md:border-t-0 md:border-l border-white/15 bg-[#081730]/80 flex flex-col justify-center">
+            <div className="font-mono text-xs uppercase tracking-widest text-slate-400 mb-2">OFFICIAL ENROLLMENT</div>
+            <p className="text-slate-400 text-sm line-through font-mono mb-1">Rp 750.000</p>
+            <p className="text-4xl lg:text-5xl font-black text-white mb-2 tracking-tight font-mono">Rp 250.000</p>
+            <div className="flex items-center gap-1.5 text-blue-300 font-mono text-xs uppercase tracking-wider mb-6">
+              <span>⚡</span> Promo Bundle Terbatas
             </div>
+            <a
+              href="https://lynk.id/richstianto/8xe41e44yej2"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-dark-cta w-full py-4 rounded-lg text-base md:text-lg tracking-tight active:scale-[0.98] transition-all duration-150 ease-out group inline-flex items-center justify-center gap-2"
+            >
+              <span>Ambil Bundle Sekarang (Beli 1 Dapat 3)</span>
+              <ArrowRight size={18} className="transition-transform duration-150 ease-out group-hover:translate-x-1" />
+            </a>
+            <p className="text-slate-400 text-xs mt-4 font-mono text-center">Akses instan seumur hidup ke member area.</p>
           </div>
         </motion.div>
       </div>

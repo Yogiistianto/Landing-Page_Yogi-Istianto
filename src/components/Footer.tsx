@@ -1,11 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Camera, Film, MessageCircle } from 'lucide-react';
+import { Film } from 'lucide-react';
+import InstagramIcon from '@/components/icons/InstagramIcon';
+import WhatsAppIcon from '@/components/icons/WhatsAppIcon';
+import { WA_URL } from '@/data/portfolioData';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-300/80 bg-white shadow-[0_-2px_4px_rgba(15,23,42,0.02)]">
-      <div className="max-w-6xl mx-auto px-6 md:px-8 py-14 flex flex-col md:flex-row items-center justify-between gap-6">
+    <footer className="border-t border-slate-300/80 bg-white shadow-[0_-2px_4px_rgba(15,23,42,0.02)] pt-10 md:pt-12 pb-24 md:pb-12">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8 pb-8 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-3">
           <Image
             src="/logo-profil.jpg"
@@ -24,36 +27,41 @@ export default function Footer() {
         </div>
 
         <div className="flex items-center gap-3">
+          {/* Tombol 1: Profil Instagram */}
           <a
-            href="https://instagram.com/bankerdapatcuan"
+            href="https://www.instagram.com/bankerdapatcuan/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Instagram @bankerdapatcuan"
-            className="w-9 h-9 rounded-xl bg-slate-50 border border-slate-300/90 flex items-center justify-center hover:border-slate-500 hover:bg-slate-100 transition shadow-xs"
+            aria-label="Instagram Yogi Istianto"
+            className="w-9 h-9 rounded-lg bg-slate-50 border border-slate-300 flex items-center justify-center text-slate-700 hover:border-slate-900 hover:text-[#0F2C59] hover:bg-slate-100 transition-colors duration-150 active:scale-[0.96] shadow-xs"
           >
-            <Camera size={16} className="text-slate-700" />
+            <InstagramIcon size={16} />
           </a>
+
+          {/* Tombol 2: Instagram Reels */}
           <a
-            href="https://instagram.com/bankerdapatcuan"
+            href="https://www.instagram.com/bankerdapatcuan/reels/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Video Channel"
-            className="w-9 h-9 rounded-xl bg-slate-50 border border-slate-300/90 flex items-center justify-center hover:border-slate-500 hover:bg-slate-100 transition shadow-xs"
+            aria-label="Instagram Reels Yogi Istianto"
+            className="w-9 h-9 rounded-lg bg-slate-50 border border-slate-300 flex items-center justify-center text-slate-700 hover:border-slate-900 hover:text-[#0F2C59] hover:bg-slate-100 transition-colors duration-150 active:scale-[0.96] shadow-xs"
           >
-            <Film size={16} className="text-slate-700" />
+            <Film size={16} />
           </a>
+
+          {/* Tombol 3: Chat WhatsApp Langsung */}
           <a
-            href="https://instagram.com/bankerdapatcuan"
+            href={WA_URL}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Chat Community"
-            className="w-9 h-9 rounded-xl bg-slate-50 border border-slate-300/90 flex items-center justify-center hover:border-slate-500 hover:bg-slate-100 transition shadow-xs"
+            aria-label="Chat WhatsApp"
+            className="w-9 h-9 rounded-lg bg-slate-50 border border-slate-300 flex items-center justify-center text-slate-700 hover:border-slate-900 hover:text-[#0F2C59] hover:bg-slate-100 transition-colors duration-150 active:scale-[0.96] shadow-xs"
           >
-            <MessageCircle size={16} className="text-slate-700" />
+            <WhatsAppIcon size={16} />
           </a>
         </div>
       </div>
-      <div className="border-t border-slate-200 py-4 text-center">
+      <div className="border-t border-slate-200/80 pt-4 text-center max-w-6xl mx-auto px-5 sm:px-8">
         <p className="text-slate-600 text-xs font-medium">
           © {new Date().getFullYear()} Yogi Istianto | @bankerdapatcuan. All rights reserved.
         </p>

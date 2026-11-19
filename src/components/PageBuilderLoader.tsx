@@ -103,7 +103,7 @@ export default function PageBuilderLoader({ onComplete }: PageBuilderLoaderProps
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="relative w-[320px] sm:w-[420px] rounded-2xl bg-white border border-slate-300/80 p-4 shadow-[0_4px_6px_-1px_rgba(15,23,42,0.06),0_16px_28px_-4px_rgba(15,23,42,0.1)] overflow-hidden"
+            className="relative w-[320px] sm:w-[420px] rounded-xl bg-white border border-slate-300/90 p-4 shadow-[0_4px_6px_-1px_rgba(15,23,42,0.06),0_16px_28px_-4px_rgba(15,23,42,0.1)] overflow-hidden"
           >
             {/* Shimmer sweep effect with light blue highlight */}
             <motion.div
@@ -176,48 +176,30 @@ export default function PageBuilderLoader({ onComplete }: PageBuilderLoaderProps
                 </motion.div>
               </div>
 
-              {/* Right Column: Lanyard Hanging Card miniature */}
-              <div className="col-span-5 flex flex-col items-center">
-                {/* Lanyard Top Ring & Clip */}
+              {/* Right Column: Blueprint Portrait Frame miniature */}
+              <div className="col-span-5 flex flex-col items-center relative">
+                {/* Miniature Architectural Frame */}
                 <motion.div
                   variants={itemVariants}
-                  className="w-2.5 h-2.5 rounded-full border border-slate-300 bg-slate-100 mb-0.5"
-                />
-                <motion.div
-                  variants={itemVariants}
-                  className="w-1.5 h-1 bg-slate-300 rounded-sm mb-0.5"
-                />
-
-                {/* Miniature Acrylic ID Pass */}
-                <motion.div
-                  variants={itemVariants}
-                  className="w-full rounded-xl bg-neutral-50 border border-neutral-200 p-2 flex flex-col gap-1.5 shadow-sm"
+                  className="w-full rounded-lg bg-neutral-50 border border-slate-300 p-1.5 flex flex-col gap-1 shadow-sm relative"
                 >
-                  {/* Top ribbon */}
-                  <div className="flex items-center justify-between border-b border-neutral-200/60 pb-1">
-                    <div className="h-1 w-10 bg-[#BFDBFE] rounded-full" />
-                    <div className="h-1 w-5 bg-slate-300 rounded-full" />
+                  {/* Top metadata line */}
+                  <div className="flex items-center justify-between border-b border-slate-200/80 pb-0.5">
+                    <div className="h-1 w-8 bg-slate-400 rounded-full" />
+                    <div className="h-1 w-4 bg-slate-300 rounded-full" />
                   </div>
 
-                  {/* Profile info miniature */}
-                  <div className="flex items-center gap-1.5">
-                    <div className="w-5 h-5 rounded-md bg-blue-100 border border-blue-200 shrink-0" />
-                    <div className="flex flex-col gap-1 w-full">
-                      <div className="h-1.5 w-3/4 bg-slate-700 rounded" />
-                      <div className="h-1 w-1/2 bg-[#0F2C59] rounded" />
-                    </div>
+                  {/* Portrait picture skeleton */}
+                  <div className="aspect-[4/5] w-full rounded bg-blue-100/60 border border-blue-200/60 flex items-center justify-center relative overflow-hidden">
+                    <div className="w-6 h-6 rounded-full bg-[#0F2C59]/20" />
                   </div>
 
-                  {/* Stat miniature grid */}
-                  <div className="grid grid-cols-2 gap-1 pt-0.5">
-                    <div className="bg-white rounded p-1 border border-neutral-200/80">
-                      <div className="h-1.5 w-2/3 bg-[#0F2C59] rounded mb-0.5" />
-                      <div className="h-1 w-full bg-slate-300 rounded" />
-                    </div>
-                    <div className="bg-white rounded p-1 border border-neutral-200/80">
-                      <div className="h-1.5 w-2/3 bg-blue-500 rounded mb-0.5" />
-                      <div className="h-1 w-full bg-slate-300 rounded" />
-                    </div>
+                  {/* Miniature Floating Annotation Badges */}
+                  <div className="absolute -top-1.5 -left-1.5 h-2.5 w-10 bg-white rounded border border-slate-300 shadow-xs flex items-center px-1">
+                    <div className="w-1 h-1 rounded-full bg-emerald-500" />
+                  </div>
+                  <div className="absolute -bottom-1.5 -right-1.5 h-3 w-8 bg-white rounded border border-slate-300 shadow-xs flex items-center justify-center">
+                    <div className="h-1 w-5 bg-[#0F2C59] rounded" />
                   </div>
                 </motion.div>
               </div>

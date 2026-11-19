@@ -102,13 +102,14 @@ export default function Navbar() {
           <div className="relative z-10 flex items-center">
             <Link
               href="#penawaran"
-              className={`inline-flex items-center gap-1.5 px-4 py-2 text-sm rounded-full transition-all duration-300 tracking-tight hover:-translate-y-0.5 active:translate-y-0 ${
+              className={`inline-flex items-center gap-1.5 px-4 py-2 text-sm rounded-full tracking-tight transition-all duration-150 ease-out active:scale-[0.98] group ${
                 isOverDark
-                  ? 'bg-blue-400 text-slate-950 font-black hover:bg-blue-300 shadow-[inset_0_1px_0_rgba(255,255,255,0.6),0_2px_12px_rgba(96,165,250,0.4)]'
-                  : 'bg-[#0F2C59] text-white font-bold hover:bg-[#163A70] shadow-[inset_0_1px_0_rgba(255,255,255,0.25),0_2px_8px_rgba(15,44,89,0.25)]'
+                  ? 'bg-white text-[#0B1F3F] font-semibold hover:bg-blue-50 shadow-[inset_0_-1px_0_rgba(15,23,42,0.1),0_2px_8px_rgba(0,0,0,0.2)]'
+                  : 'bg-[#0F2C59] text-white font-medium hover:bg-[#163A70] border border-[#0B1F3F] shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_1px_2px_rgba(15,23,42,0.15)]'
               }`}
             >
-              Mulai Sekarang <ArrowRight size={13} />
+              <span>Mulai Sekarang</span>
+              <ArrowRight size={13} className="transition-transform duration-150 ease-out group-hover:translate-x-1" />
             </Link>
           </div>
         </nav>
@@ -156,10 +157,10 @@ export default function Navbar() {
             {/* 4. Beli */}
             <Link
               href="#penawaran"
-              className="flex flex-col items-center justify-center py-1.5 rounded-full bg-[#0F2C59] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.3),0_2px_8px_rgba(15,44,89,0.3)] active:scale-95 hover:bg-[#163A70] transition-all"
+              className="flex flex-col items-center justify-center py-1.5 rounded-full bg-[#0F2C59] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_1px_2px_rgba(15,23,42,0.15)] border border-[#0B1F3F] active:scale-[0.98] hover:bg-[#163A70] transition-all duration-150 ease-out"
             >
               <Sparkles size={16} className="text-blue-300" />
-              <span className="text-[10px] font-bold tracking-tight mt-0.5">Beli</span>
+              <span className="text-[10px] font-medium tracking-tight mt-0.5">Beli</span>
             </Link>
           </div>
         </nav>

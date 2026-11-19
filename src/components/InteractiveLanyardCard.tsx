@@ -177,7 +177,7 @@ export default function InteractiveLanyardCard({ children, isLoaded = true }: In
               style={{
                 boxShadow: dynamicBoxShadow,
               }}
-              className="rounded-3xl"
+              className="rounded-xl"
             >
               {children}
             </motion.div>

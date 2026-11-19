@@ -35,17 +35,64 @@ export const features = [
   },
 ];
 
-export const reelsMockups = [
-  { views: '1.2M', label: 'Cara Mulai Produk Digital', color: 'from-emerald-900 to-teal-950' },
-  { views: '750K', label: '3 Aset Digital untuk Banker', color: 'from-slate-800 to-slate-900' },
-  { views: '420K', label: 'Alur Distribusi Digital', color: 'from-slate-800 to-slate-900' },
-  { views: '980K', label: 'Template Siap Jual', color: 'from-emerald-900 to-teal-950' },
+export interface FeaturedReel {
+  title?: string;
+  views: string;
+  thumbnail: string;
+  instagramUrl: string;
+}
+
+export const FEATURED_REELS: FeaturedReel[] = [
+  {
+    views: '2.4M',
+    thumbnail: '/reels/reels-1.jpeg',
+    instagramUrl: 'https://www.instagram.com/reel/DaHxGR0zOKg/',
+  },
+  {
+    views: '1.7M',
+    thumbnail: '/reels/reels-2.jpeg',
+    instagramUrl: 'https://www.instagram.com/reel/Daj43uGzB_b/',
+  },
+  {
+    views: '861K',
+    thumbnail: '/reels/reels-3.jpeg',
+    instagramUrl: 'https://www.instagram.com/reel/DcYqEpoTW-B/',
+  },
+  {
+    views: '167K',
+    thumbnail: '/reels/reels-4.jpeg',
+    instagramUrl: 'https://www.instagram.com/reel/DbHi7urzQoa/',
+  },
 ];
 
-export const earningsItems = [
-  { label: 'SUPER AFFILIATE ID', sales: 'Blueprint 2 Digit Income dari Affiliate', revenue: 'Rp 250.000' },
-  { label: 'REZEKI LANGIT', sales: '3 Pilar Roadmap Dikejar Rezeki', revenue: 'Rp 149.000' },
-  { label: 'CUAN DIGITAL', sales: 'Part-time Digital Full-time Income', revenue: 'Rp 129.000' },
+export const reelsMockups = FEATURED_REELS;
+
+export interface EarningsItem {
+  label: string;
+  sales: string;
+  revenue: string;
+  url: string;
+}
+
+export const earningsItems: EarningsItem[] = [
+  {
+    label: 'SUPER AFFILIATE ID',
+    sales: 'Blueprint 2 Digit Income dari Affiliate',
+    revenue: 'Rp 250.000',
+    url: 'https://lynk.id/richstianto/8xe41e44yej2',
+  },
+  {
+    label: 'REZEKI LANGIT',
+    sales: '3 Pilar Roadmap Dikejar Rezeki',
+    revenue: 'Rp 149.000',
+    url: 'https://lynk.id/richstianto/d2g3j2rz14yr',
+  },
+  {
+    label: 'CUAN DIGITAL',
+    sales: 'Part-time Digital Full-time Income',
+    revenue: 'Rp 129.000',
+    url: 'https://lynk.id/richstianto/nd0kdl01wky8',
+  },
 ];
 
 export const courseModules = [
@@ -102,4 +149,18 @@ export const faqs = [
     a: 'Cukup klik tombol "Ambil Bundle Sekarang" di atas, selesaikan pendaftaran dan pembayaran, maka akses instan ke seluruh materi dan grup komunitas akan langsung dikirimkan ke email Anda.',
   },
 ];
+
+export const WA_NUMBER = '6282325671589';
+export const WA_DISPLAY_NAME = 'Yogi Istianto';
+export const WA_MESSAGE = `Assalamualaikum, Mas Yogi.
+Saya berminat bergabung dan ikut bimbingan bersama komunitas Super Affiliate.
+
+Perkenalkan:
+Nama: 
+Domisili: 
+
+Mohon arahannya untuk langkah selanjutnya, Mas. Terima kasih.`;
+
+export const WA_URL = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_MESSAGE)}`;
+
 
