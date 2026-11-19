@@ -1,3 +1,7 @@
+'use client';
+
+import { useState } from 'react';
+import PageBuilderLoader from '@/components/PageBuilderLoader';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/sections/HeroSection';
 import StatsBar from '@/components/sections/StatsBar';
@@ -11,11 +15,14 @@ import CtaSection from '@/components/sections/CtaSection';
 import Footer from '@/components/Footer';
 
 export default function Page() {
+  const [isReady, setIsReady] = useState(false);
+
   return (
-    <div className="bg-[#0A0A0F] text-white min-h-screen overflow-x-hidden">
+    <div className="bg-[#F1F5F9] text-slate-900 min-h-screen overflow-x-hidden relative bg-grid-soft">
+      <PageBuilderLoader onComplete={() => setIsReady(true)} />
       <Navbar />
       <main>
-        <HeroSection />
+        <HeroSection isLoaded={isReady} />
         <StatsBar />
         <FeatureSection />
         <EarningsHighlight />

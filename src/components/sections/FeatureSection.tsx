@@ -15,9 +15,9 @@ export default function FeatureSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ type: 'spring', stiffness: 120, damping: 20 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 text-xs font-semibold mb-6"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100/70 border border-blue-200/90 text-[#0F2C59] text-xs font-bold mb-6"
           >
-            <Target size={12} />
+            <Target size={13} />
             Kenapa Perlu Punya Aset Digital?
           </motion.div>
           <motion.h2
@@ -25,21 +25,19 @@ export default function FeatureSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ type: 'spring', stiffness: 120, damping: 20, delay: 0.08 }}
-            className="text-3xl md:text-4xl lg:text-5xl font-black leading-tight tracking-tight mb-6"
+            className="text-3xl md:text-4xl lg:text-5xl font-black leading-tight tracking-tight mb-6 text-slate-950"
           >
             Gaji utama aman,{' '}
-            <span className="text-gradient-yellow">income tambahan</span>
-            <br />
-            jalan terus.
+            <span className="text-[#1D4ED8]">income tambahan</span> jalan terus.
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ type: 'spring', stiffness: 120, damping: 20, delay: 0.16 }}
-            className="text-slate-300 text-base md:text-lg leading-relaxed mb-8"
+            className="text-slate-700 text-base md:text-lg leading-relaxed mb-8 font-normal"
           >
-            Sebagai pekerja profesional, waktumu sangat berharga. Saatnya mengubah waktu luang menjadi aset digital yang bekerja 24/7 — bahkan saat kamu tidur.
+            Sebagai pekerja profesional, waktumu sangat berharga. Saatnya mengubah waktu luang menjadi aset digital yang bekerja 24/7, bahkan saat kamu tidur.
           </motion.p>
           <div className="space-y-4">
             {features.map((f, i) => (
@@ -49,15 +47,14 @@ export default function FeatureSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-100px' }}
                 transition={{ type: 'spring', stiffness: 120, damping: 20, delay: i * 0.08 }}
-                whileHover={{ scale: 1.01, y: -3 }}
-                className="flex gap-4 p-5 rounded-2xl bg-[#13131A] border border-[#1E1E2E] hover:border-emerald-500/30 card-glow transition-colors group cursor-pointer"
+                className="flex gap-4 p-5 rounded-2xl card-depth card-depth-hover cursor-pointer group"
               >
-                <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center shrink-0 group-hover:bg-emerald-500/20 transition">
-                  <f.icon size={18} className="text-emerald-400" />
+                <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200/70 flex items-center justify-center shrink-0 group-hover:bg-blue-100 transition">
+                  <f.icon size={18} className="text-[#0F2C59]" />
                 </div>
                 <div>
-                  <p className="font-bold text-white mb-1 tracking-tight">{f.title}</p>
-                  <p className="text-slate-400 text-sm leading-relaxed">{f.desc}</p>
+                  <p className="font-bold text-slate-950 mb-1 tracking-tight">{f.title}</p>
+                  <p className="text-slate-700 text-sm leading-relaxed font-normal">{f.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -67,7 +64,7 @@ export default function FeatureSection() {
         {/* Right Column: Instagram Reels Grid Mockup */}
         <div className="relative">
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="w-64 h-64 rounded-full bg-yellow-400/5 blur-3xl" />
+            <div className="w-64 h-64 rounded-full bg-blue-500/10 blur-3xl" />
           </div>
           <div className="relative grid grid-cols-2 gap-5 md:gap-6">
             {reelsMockups.map((reel, i) => (
@@ -77,16 +74,15 @@ export default function FeatureSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-100px' }}
                 transition={{ type: 'spring', stiffness: 120, damping: 20, delay: i * 0.08 }}
-                whileHover={{ scale: 1.01, y: -3 }}
-                className={`aspect-[9/16] rounded-2xl bg-gradient-to-b ${reel.color} border border-[#1E1E2E] hover:border-white/20 card-glow relative overflow-hidden group cursor-pointer transition-colors`}
+                className={`aspect-[9/16] rounded-2xl bg-gradient-to-b ${reel.color} border border-slate-300/80 shadow-[0_4px_12px_rgba(15,23,42,0.08)] hover:shadow-[0_20px_32px_-8px_rgba(15,23,42,0.16)] hover:-translate-y-1 relative overflow-hidden group cursor-pointer transition-all duration-200`}
               >
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition">
-                    <Play size={16} className="text-white" fill="white" />
+                  <div className="w-10 h-10 rounded-full bg-white/25 backdrop-blur-xs flex items-center justify-center group-hover:scale-110 transition shadow-sm">
+                    <Play size={16} className="text-white ml-0.5" fill="white" />
                   </div>
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 p-3.5 bg-gradient-to-t from-black/80">
-                  <p className="text-yellow-400 text-xs font-black">{reel.views} views</p>
+                <div className="absolute bottom-0 left-0 right-0 p-3.5 bg-gradient-to-t from-slate-950/90 via-slate-950/50 to-transparent">
+                  <p className="text-amber-300 text-xs font-black">{reel.views} views</p>
                   <p className="text-white text-xs font-medium leading-tight mt-0.5">{reel.label}</p>
                 </div>
               </motion.div>
@@ -97,4 +93,3 @@ export default function FeatureSection() {
     </section>
   );
 }
-

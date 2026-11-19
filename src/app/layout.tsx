@@ -16,14 +16,14 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'Yogi Istianto — @bankerdapatcuan | Digital Creator',
+  title: 'Yogi Istianto | @bankerdapatcuan | Digital Creator',
   description: 'Kreator konten edukasi produk digital untuk karyawan bank. Bangun aset digital dan penghasilan sampingan tanpa mengganggu jam kerja.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="id" className={`dark ${inter.variable} ${plusJakartaSans.variable}`}>
-      <body className="font-sans antialiased bg-[#0A0A0F] text-slate-100 selection:bg-emerald-500/20 selection:text-emerald-300">
+    <html lang="id" className={`light ${inter.variable} ${plusJakartaSans.variable}`}>
+      <body className="font-sans antialiased bg-[#F1F5F9] text-slate-800 selection:bg-[#BFDBFE] selection:text-[#1D4ED8]">
         {children}
       </body>
     </html>

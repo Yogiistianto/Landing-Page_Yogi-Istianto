@@ -13,17 +13,17 @@ function FaqItem({ q, a, index }: { q: string; a: string; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-100px' }}
       transition={{ type: 'spring', stiffness: 120, damping: 20, delay: index * 0.08 }}
-      className="border border-[#1E1E2E] bg-[#13131A]/40 rounded-2xl overflow-hidden hover:border-[#2E2E3E] transition-colors"
+      className="card-depth card-depth-hover rounded-2xl overflow-hidden"
     >
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-white/[0.02] transition"
+        className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-slate-50 transition"
         aria-expanded={open}
       >
-        <span className="font-semibold text-white tracking-tight pr-4 text-base md:text-lg">{q}</span>
+        <span className="font-bold text-slate-950 tracking-tight pr-4 text-base md:text-lg">{q}</span>
         <ChevronDown
           size={20}
-          className={`shrink-0 text-emerald-400 transition-transform duration-300 ${
+          className={`shrink-0 text-[#1D4ED8] transition-transform duration-300 ${
             open ? 'rotate-180' : ''
           }`}
         />
@@ -33,7 +33,7 @@ function FaqItem({ q, a, index }: { q: string; a: string; index: number }) {
           open ? 'max-h-96' : 'max-h-0'
         }`}
       >
-        <p className="px-6 pb-6 text-slate-300 leading-relaxed text-sm md:text-base font-normal">{a}</p>
+        <p className="px-6 pb-6 text-slate-700 leading-relaxed text-sm md:text-base font-normal">{a}</p>
       </div>
     </motion.div>
   );
@@ -41,7 +41,7 @@ function FaqItem({ q, a, index }: { q: string; a: string; index: number }) {
 
 export default function FaqSection() {
   return (
-    <section id="faq" className="py-20 md:py-24">
+    <section id="faq" className="py-20 md:py-24 scroll-mt-28">
       <div className="max-w-3xl mx-auto px-6 md:px-8">
         <div className="text-center mb-14">
           <motion.h2
@@ -49,7 +49,7 @@ export default function FaqSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ type: 'spring', stiffness: 120, damping: 20 }}
-            className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight mb-4"
+            className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight mb-4 text-slate-950"
           >
             Pertanyaan yang Sering Ditanyakan
           </motion.h2>
@@ -58,7 +58,7 @@ export default function FaqSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-100px' }}
             transition={{ type: 'spring', stiffness: 120, damping: 20, delay: 0.08 }}
-            className="text-slate-300 text-base md:text-lg leading-relaxed"
+            className="text-slate-700 text-base md:text-lg leading-relaxed font-normal"
           >
             Ada yang mengganjal? Cek dulu di sini.
           </motion.p>
@@ -72,4 +72,3 @@ export default function FaqSection() {
     </section>
   );
 }
-
