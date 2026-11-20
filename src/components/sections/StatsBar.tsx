@@ -3,27 +3,41 @@
 import { motion } from 'framer-motion';
 import { stats } from '@/data/portfolioData';
 
+// Duplikasi list agar loop horizontal mulus dan tanpa jeda kosong di semua resolusi
+const marqueeList = [...stats, ...stats, ...stats, ...stats];
+
 export default function StatsBar() {
   return (
-    <div className="border-y border-slate-300 bg-white relative z-20">
-      <div className="max-w-6xl mx-auto px-5 sm:px-8 grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-slate-200">
-        {stats.map(({ value, label, icon: Icon }, i) => (
-          <motion.div
-            key={label}
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-50px' }}
-            transition={{ type: 'spring', stiffness: 120, damping: 20, delay: i * 0.08 }}
-            className="text-center py-6 md:py-7 px-4"
+    <div className="border-y border-slate-300 bg-white relative z-20 py-3.5 sm:py-4 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+      <motion.div
+        animate={{ x: ['0%', '-50%'] }}
+        transition={{
+          ease: 'linear',
+          duration: 22,
+          repeat: Infinity,
+        }}
+        className="flex w-max items-center gap-10 md:gap-12"
+      >
+        {marqueeList.map(({ value, label, icon: Icon }, idx) => (
+          <div
+            key={idx}
+            className="flex items-center gap-3 shrink-0 whitespace-nowrap select-none"
           >
-            <div className="flex items-center justify-center gap-2 mb-1.5">
-              <Icon size={18} className="text-[#0F2C59] shrink-0" />
-              <p className="text-2xl md:text-3xl font-black tracking-tight text-slate-950 font-mono">{value}</p>
+            <div className="w-8 h-8 rounded-md bg-blue-50 border border-blue-200/80 flex items-center justify-center text-[#0F2C59] shrink-0">
+              <Icon size={16} />
             </div>
-            <p className="text-slate-600 font-mono text-xs uppercase tracking-wider font-semibold">{label}</p>
-          </motion.div>
+            <div className="flex items-center gap-2">
+              <span className="text-xl sm:text-2xl font-black tracking-tight text-slate-950 font-mono">
+                {value}
+              </span>
+              <span className="text-slate-600 font-mono text-xs uppercase tracking-wider font-semibold">
+                {label}
+              </span>
+            </div>
+            <span className="w-1.5 h-1.5 rounded-full bg-slate-300 ml-4 shrink-0" aria-hidden="true" />
+          </div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

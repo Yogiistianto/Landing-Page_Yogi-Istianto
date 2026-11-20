@@ -24,10 +24,10 @@ export default function HeroSection({ isLoaded = true }: HeroSectionProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ type: 'spring', stiffness: 120, damping: 20 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-100/70 border border-blue-200/90 text-[#0F2C59] font-mono text-xs uppercase tracking-wider font-bold mb-6"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-100/70 border border-blue-200/90 text-[#0F2C59] font-mono text-xs uppercase tracking-wider font-bold mb-6 whitespace-nowrap"
           >
             <Sparkles size={13} />
-            [ DIGITAL CREATOR // EDUKASI ASET DIGITAL ]
+            <span>[ DIGITAL CREATOR ]</span>
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 15 }}
@@ -37,7 +37,7 @@ export default function HeroSection({ isLoaded = true }: HeroSectionProps) {
             className="text-4xl sm:text-5xl lg:text-[3.5rem] font-black leading-[1.22] lg:leading-[1.25] tracking-tight mb-6 text-balance text-slate-950"
           >
             Bangun{' '}
-            <span className="text-[#0F2C59]">Aset Digital</span>{' '}
+            <span className="text-[#1D4ED8]">Aset Digital</span>{' '}
             Tanpa Meninggalkan{' '}
             <span className="relative inline-block mx-1 mt-2 align-bottom">
               <span className="relative z-10 bg-[#BFDBFE]/80 text-[#0F2C59] px-2.5 py-0.5 rounded-sm border-l-2 border-r-2 border-[#1D4ED8] font-bold inline-block">

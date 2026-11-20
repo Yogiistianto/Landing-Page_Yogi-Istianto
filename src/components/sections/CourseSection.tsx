@@ -113,10 +113,10 @@ export default function CourseSection() {
               href="https://lynk.id/richstianto/8xe41e44yej2"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-dark-cta w-full py-4 rounded-lg text-base md:text-lg tracking-tight active:scale-[0.98] transition-all duration-150 ease-out group inline-flex items-center justify-center gap-2"
+              className="btn-dark-cta w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-lg text-[13.5px] sm:text-base font-semibold tracking-tight active:scale-[0.98] transition-all duration-150 ease-out group inline-flex items-center justify-center gap-1.5 whitespace-nowrap"
             >
               <span>Ambil Bundle Sekarang (Beli 1 Dapat 3)</span>
-              <ArrowRight size={18} className="transition-transform duration-150 ease-out group-hover:translate-x-1" />
+              <ArrowRight className="w-4 h-4 shrink-0 transition-transform duration-150 ease-out group-hover:translate-x-1" />
             </a>
             <p className="text-slate-400 text-xs mt-4 font-mono text-center">Akses instan seumur hidup ke member area.</p>
           </div>
