@@ -91,9 +91,7 @@ export default function HeroSection({ isLoaded = true }: HeroSectionProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ type: 'spring', stiffness: 120, damping: 20, delay: 0.32 }}
-            className="flex items-center gap-2.5"
           >
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
             <p className="text-slate-700 text-sm font-normal">
               Bergabung bersama <span className="text-slate-950 font-semibold font-mono">2.000+ member</span> komunitas kami
             </p>

@@ -18,8 +18,7 @@ export default function WhatsAppSection() {
         >
           {/* Sisi Kiri: Informasi & Value */}
           <div className="md:col-span-7 p-6 sm:p-8 md:p-10 flex flex-col justify-center">
-            <div className="flex items-center gap-2 mb-3">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block animate-pulse shrink-0" />
+            <div className="mb-3">
               <span className="font-mono text-xs tracking-wider uppercase text-slate-500 font-medium">
                 [ KONSULTASI LANGSUNG ]
               </span>

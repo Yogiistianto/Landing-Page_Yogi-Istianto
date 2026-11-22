@@ -4,17 +4,17 @@ import {
 } from 'lucide-react';
 
 export const stats = [
-  { value: '3K+', label: 'Followers Aktif', icon: Users },
-  { value: '300K–1M+', label: 'Views / Reel', icon: Play },
-  { value: '500K+', label: 'Reach Bulanan', icon: TrendingUp },
+  { value: '3.000+', label: 'Followers Aktif', icon: Users },
+  { value: '500K+', label: 'Avg. Views / Reel', icon: Play },
+  { value: '2M+', label: 'Reach Bulanan', icon: TrendingUp },
   { value: '3', label: 'Produk Pilihan', icon: Layers },
 ];
 
 export const profileStats = [
-  { label: 'Total Followers', val: '3.000+', color: 'text-emerald-400' },
-  { label: 'Avg. Views Reel', val: '500K+', color: 'text-yellow-400' },
-  { label: 'Reach Bulanan', val: '2M+', color: 'text-blue-400' },
-  { label: 'Produk Pilihan', val: '3', color: 'text-purple-400' },
+  { label: 'Total Followers', val: '3.000+', color: 'text-slate-900' },
+  { label: 'Avg. Views Reel', val: '500K+', color: 'text-slate-900' },
+  { label: 'Reach Bulanan', val: '2M+', color: 'text-slate-900' },
+  { label: 'Produk Pilihan', val: '3', color: 'text-slate-900' },
 ];
 
 export const features = [

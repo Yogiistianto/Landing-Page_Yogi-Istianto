@@ -60,24 +60,18 @@ export default function BlueprintCreatorFrame({ isLoaded = true }: BlueprintCrea
         {/* Floating Annotation Badges (Consistently Padded & Spaced)  */}
         {/* ======================================================== */}
 
-        {/* 1. Top-Left Badge: Identity & Status */}
+        {/* 1. Top-Left Badge: Identity */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           className="absolute -top-3.5 left-2 sm:-left-5 z-20 bg-white/90 backdrop-blur-md border border-slate-300/90 shadow-[0_8px_20px_rgba(15,23,42,0.08)] rounded-lg px-3.5 py-2.5 whitespace-nowrap transition-transform duration-300 group-hover:-translate-y-1"
         >
-          <div className="flex items-center gap-2">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-            </span>
-            <span className="text-sm font-bold text-slate-950 tracking-tight font-mono leading-none">
-              @bankerdapatcuan
-            </span>
-          </div>
+          <span className="text-sm font-bold text-slate-950 tracking-tight font-mono leading-none block">
+            @bankerdapatcuan
+          </span>
           <p className="font-mono text-[10px] uppercase tracking-wider text-slate-500 font-medium mt-1">
-            DIGITAL CREATOR // LIVE
+            DIGITAL CREATOR
           </p>
         </motion.div>
 
